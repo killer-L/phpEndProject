@@ -9,6 +9,20 @@ if (! isset($_SESSION['userName'])) {
 }
 $userName = $_SESSION['userName'];
 
+require_once '../conn.php';
+$r = mysql_query("select subject from subject");
+$ary=array();
+while ($row=mysql_fetch_array($r)){
+	$ary[]=$row;
+}
+$r1 = mysql_query("select studentId from student");
+$ary1=array();
+while ($row=mysql_fetch_array($r1)){
+	$ary1[]=$row;
+}
+
+?>
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -39,18 +53,24 @@ $userName = $_SESSION['userName'];
 						<div class="panel-body">
 							<form role="form" action='insertscoredo.php' method='post'>
 								<input type='hidden' name='id' /> <br />
-								<div class="form-group input-group">
-									<tr>
-										<td align='center'>学号</td>
-										<td><input type='text' name='studentId' /></td>
-									</tr>
-								</div>
-								<div class="form-group input-group">
-									<tr>
-										<td align='center'>科目编号</td>
-										<td><input type='text' name='subjectId' /></td>
-									</tr>
-								</div>
+								请选择学号：<select id="selsub" name="sid">
+						<option>请选择学号</option>
+						<?php foreach ($ary1 as $a){ ?>
+						          <option value="<?php echo $a['studentId'];?>"><?php echo $a['studentId'];?></option>
+						         
+						          
+						        <?php }?>  
+						         
+						</select><br>
+						请选择科目：<select id="selsub2" name="km">
+						<option>请选择科目</option>
+						<?php foreach ($ary as $a){ ?>
+						          <option value="<?php echo $a['subject'];?>"><?php echo $a['subject'];?></option>
+						         
+						          
+						        <?php }?>  
+						         
+						</select><br>
 								<div class="form-group input-group">
 
 									<tr>
@@ -92,6 +112,8 @@ $userName = $_SESSION['userName'];
 	laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
 	laydate({elem: '#birthday'});//绑定元素
 }();
+
+
 </script>
 
 </body>
