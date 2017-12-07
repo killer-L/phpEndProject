@@ -76,10 +76,10 @@ $menuName = substr($url,$start+1,$end-$start-1);
 
 			<!--sidebar nav start-->
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><a href="index.php"><span> 首页</span></a></li>
-				<li><a href="student.php"><span> 学生信息</span></a></li>
-				<li><a href="score.php"> 成绩管理</a></li>
-				<li><a href="subject.php"> 科目管理</a></li>
+				<li><a href="../index.php"><span> 首页</span></a></li>
+				<li><a href="../student.php"><span> 学生信息</span></a></li>
+				<li><a href="../score.php"> 成绩管理</a></li>
+				<li><a href="../subject.php"> 科目管理</a></li>
 			</ul>
 			<!--sidebar nav end-->
 

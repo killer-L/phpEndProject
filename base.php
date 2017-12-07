@@ -113,7 +113,7 @@ $menuName = substr($url,$start+1,$end-$start-1);
 							alt="" /> <?=$userName?> <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-							<li><a href="newpassword"><i class="fa fa-cog"></i> 修改密码</a></li>
+							<li><a href="newpassword.php"><i class="fa fa-cog"></i> 修改密码</a></li>
 							<li><a href="loginout.php"><i class="fa fa-sign-out"></i> 退出登录</a></li>
 						</ul></li>
 
